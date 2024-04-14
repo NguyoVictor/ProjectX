@@ -1,44 +1,20 @@
-// Function to shorten URL
-async function shortenURL(longURL, customName = null) {
-  const baseURL = 'https://ulvis.net/api.php';
-  let url = `${baseURL}?url=${encodeURIComponent(longURL)}`;
+     document.querySelector('.input-container').addEventListener('submit', async (event) => {
+      event.preventDefault();
 
-  if (customName) {
-      url += `&custom=${customName}`;
-  }
+      const urlInput = document.getElementById('urlInput');
+      const longUrl = urlInput.value;
 
-  try {
-      const response = await fetch(url);
-      const data = await response.json();
-      if (data.success === 1) {
-          console.log('URL Shortened:', data.data.url);
-          trackURLShortening();
-          return data.data.url;
-      } else {
-          console.error('Error shortening URL:', data.error.msg);
-          return null;
+      try {
+        const response = await fetch(`https://ulvis.net/API/write/get?url=${encodeURIComponent(longUrl)}`);
+        if (response.ok) {
+          const data = await response.json();
+          const shortUrl = data.short;
+          alert(`Shortened URL: ${shortUrl}`);
+        } else {
+          alert('Error: Unable to shorten URL.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error: Unable to shorten URL. Please try again later.');
       }
-  } catch (error) {
-      console.error('Error shortening URL:', error);
-      return null;
-  }
-}
-
-// Function to track URL shortening
-async function trackURLShortening() {
-  // You can implement tracking logic here, such as updating a counter or sending analytics data
-  // For demonstration purposes, let's increment a counter
-  if (!localStorage.getItem('shortenedURLCount')) {
-      localStorage.setItem('shortenedURLCount', '1');
-  } else {
-      let count = parseInt(localStorage.getItem('shortenedURLCount'));
-      count++;
-      localStorage.setItem('shortenedURLCount', count.toString());
-  }
-}
-
-// Example usage
-const longURL = 'https://www.youtube.com/watch?v=';
-const customName = 'mycustomname';
-
-shortenURL(longURL, customName);
+    });

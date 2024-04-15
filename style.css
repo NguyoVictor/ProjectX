@@ -164,17 +164,7 @@ input {
   padding: 1rem 0.2rem;
   border-radius: 0.3rem;
 }
-.boost {
-  margin-top: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  background: var(--dark-violet);
-  padding: 1.8rem;
-  position: relative;
-  gap: 2rem;
-  color: #fff;
-}
+
 
 .boost .btn {
   background: cyan;

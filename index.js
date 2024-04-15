@@ -33,7 +33,7 @@ function shortenUrl(longUrl) {
         const shortUrl = await shortenUrl(longUrl);
         if (shortUrl) {
           alert(`Shortened URL: ${shortUrl}`);
-          // You can do further processing here if needed
+
         } else {
           alert('Error: Unable to shorten URL');
         }

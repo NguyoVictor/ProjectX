@@ -19,7 +19,6 @@ function shortenUrl(longUrl) {
         });
     });
   }
-
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.input-container');
     const urlInput = document.getElementById('urlInput');

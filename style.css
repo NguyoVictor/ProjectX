@@ -162,8 +162,6 @@ input {
   border-radius: 0.3rem;
 }
 
-
-
 footer {
   display: flex;
   align-items: flex-start;
@@ -191,7 +189,6 @@ ul :nth-child(1) {
   padding: 0.3rem 1.0rem;
   margin-top: 0.1rem;
 }
-
 
 .result .item {
   display: flex;

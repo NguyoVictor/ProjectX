@@ -130,7 +130,7 @@ input {
   max-width: 30rem;
 }
 .service-content p {
-  color: var(--dark-violet);
+  color: var(--very-dark-blue);
 }
 .cards {
   margin-top: 2.5rem;

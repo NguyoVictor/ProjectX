@@ -7,6 +7,7 @@ Victor Nguyo
 Snap Link is a simple URL shortener designed to make long URLs more manageable. With Snap Link, you can quickly shorten any URL into a compact and easy-to-share format. This project aims to provide a straightforward solution for individuals or organizations needing to share URLs efficiently across various platforms.
 
 ## Project Setup Instructions
+
 To set up ProjectX locally, I followed these steps:
 
 1. Clone the repository:

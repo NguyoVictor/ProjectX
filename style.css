@@ -213,17 +213,7 @@ ul :nth-child(1) {
   background-color: #fff;
   margin-inline: auto;
 }
-.newUrl-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
-  color: #fff;
-  font-size: 1rem;
-  text-align: center;
-  background: var(--cyan);
-  cursor: pointer;
-  outline: none;
-  border: none;
-}
+
 /* Mobile View */
 @media (max-width: 768px) {
   .hamburger {

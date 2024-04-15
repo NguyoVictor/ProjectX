@@ -46,9 +46,7 @@ header {
   color: var(--grayish-violet);
   cursor: pointer;
 }
-.sm {
-  display: none;
-}
+
 .right {
   margin-left: 0.5rem;
 }

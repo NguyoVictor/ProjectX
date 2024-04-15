@@ -33,6 +33,7 @@ header {
 .left {
   display: flex;
   padding: 0.3rem 3.0rem;
+  position: relative;
 }
 .left ul {
   display: flex;
@@ -72,6 +73,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .content {
   max-width: 30rem;

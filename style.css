@@ -126,12 +126,15 @@ input {
   display: flex;
   flex-direction: column;
 }
+
 .service-content {
   max-width: 30rem;
 }
+
 .service-content p {
   color: var(--very-dark-blue);
 }
+
 .cards {
   margin-top: 2.5rem;
   display: flex;
@@ -139,6 +142,7 @@ input {
   justify-content: space-around;
   width: 100%;
 }
+
 .card p {
   color: rgb(52, 44, 44);
 }
@@ -146,16 +150,19 @@ input {
   margin: 2rem;
   max-width: 20rem;
 }
+
 .card1 {
   background: #eff1f7;
   padding: 1rem 0.2rem;
   border-radius: 0.3rem;
 }
+
 .card2 {
   background: #eff1f7;
   padding: 1rem 0.2rem;
   border-radius: 0.3rem;
 }
+
 .card3 {
   background: #eff1f7;
   padding: 1rem 0.2rem;
@@ -172,19 +179,23 @@ footer {
 .footer-links {
   margin-top: 2rem;
 }
+
 ul li {
   color: var(--gray);
   margin: 0.2rem 0;
   list-style: none;
 }
+
 ul :nth-child(1) {
   color: #fff;
   font-weight: bold;
 }
+
 .footer-social {
   display: flex;
   justify-content: space-between;
 }
+
 .social-links {
   padding: 0.3rem 1.0rem;
   margin-top: 0.1rem;

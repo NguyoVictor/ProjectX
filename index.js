@@ -1,20 +1,44 @@
-     document.querySelector('.input-container').addEventListener('submit', async (event) => {
+function shortenUrl(longUrl) {
+    return new Promise((resolve, reject) => {
+      const apiUrl = `https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`;
+
+      fetch(apiUrl)
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error('Failed to shorten URL');
+          }
+        })
+        .then(shortenedUrl => {
+          resolve(shortenedUrl);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          reject(error);
+        });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.input-container');
+    const urlInput = document.getElementById('urlInput');
+
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const urlInput = document.getElementById('urlInput');
       const longUrl = urlInput.value;
 
       try {
-        const response = await fetch(`https://ulvis.net/API/write/get?url=${encodeURIComponent(longUrl)}`);
-        if (response.ok) {
-          const data = await response.json();
-          const shortUrl = data.short;
+        const shortUrl = await shortenUrl(longUrl);
+        if (shortUrl) {
           alert(`Shortened URL: ${shortUrl}`);
+          // You can do further processing here if needed
         } else {
-          alert('Error: Unable to shorten URL.');
+          alert('Error: Unable to shorten URL');
         }
       } catch (error) {
-        console.error('Error:', error);
         alert('Error: Unable to shorten URL. Please try again later.');
       }
     });
+  });
